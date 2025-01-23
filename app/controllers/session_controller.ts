@@ -6,8 +6,7 @@ import { HttpContext } from '@adonisjs/core/http'
 export default class SessionController {
     async login({request, auth, response}: HttpContext){
         const { email, password } = await request.validateUsing(loginValidator)
-        console.log('@@@@@@@@@@@@@@@@@')
-        console.log(email, password)
+      
 
         const user = await User.verifyCredentials(email, password)
        
